@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>::Bird Time</title>
+</head>
+
+<body>
+    
+    <div id="bg">
+        <span id="cuba"><strong>BIRD</strong></span>
+        <img src="img/bird.gif" alt="bird">
+        <img src="img/bird.gif" alt="bird">  
+        <p><strong>Time</strong></p>   
+    </div>
+
+    <script>
+        function relogio(){
+            var date = new Date();
+
+            h = date.getHours();
+            m = date.getMinutes();
+
+            var zero_h = (h > 9) ? ("" + h) : ("0" + h);
+            var zero_m = (m > 9) ? ("" + m) : ("0" + m);
+
+            //document.getElementById('hours').innerHTML =zero_h + ":" + zero_m;
+
+            if (date.getHours() >= 19 && date.getMinutes() == 25) {
+                document.getElementById('cuba').style.backgroundImage = "linear-gradient( rgb(1, 19, 39),rgb(8, 58, 124))";
+            }
+            else if (date.getHours() >= 5) {
+                document.getElementById('cuba').style.backgroundImage = "linear-gradient( rgb(0, 102, 218),rgb(124, 177, 246))";
+            }
+        }
+
+        setInterval(relogio, 1000);
+    </script>
+</body>
+
+</html>

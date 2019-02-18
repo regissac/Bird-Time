@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
+*{padding: 0px; margin: 0px; font-family: "Roboto";}
+#bg{overflow: hidden; position: relative; display: flex; justify-content: center; align-items: center;flex-direction: column; width: 100%; height: 100vh; background-color: #fff; }
+/*#hours{font-weight: bold; background-clip: text; color: transparent; font-size: 30em;}*/
+#cuba{font-weight: 900; background-clip: text; color: transparent; font-size:30vw; line-height: 25vw; animation: move_balance  10s infinite;}
+
+#bg img:nth-child(2){width: 15vw;height: auto; position: absolute; top: 50vh; right: 0vw; animation:  move_bird 6s infinite;}
+#bg img:nth-child(3){width: 15vw;height: auto; position: absolute; top: 60vh; right: 0vw; animation:  move_bird2 4s infinite;}
+
+#bg img{filter: invert(100%);filter: gray;}
+#bg p:nth-child(4){font-weight: 500;font-size: 3vw; text-transform: uppercase;}
+
+
+nav{z-index: 2019; position: fixed;width: 90%; height: 100px;top: 0px; box-shadow: 1px 1px 5px rgba(34, 34, 34, 0.534); background-color: #000; padding: 0px 5%; color: #ffffff;}
+.logo{line-height: 100px; text-transform: uppercase; float: left;}
+.list_menu{line-height: 100px; float: right; }
+.list_menu a{color: #fff; text-transform: uppercase; text-decoration: none; padding: 0px 10px;}
+.show-menu-btn, .hide-menu-btn{transition:0.4s; font-size: 20px;cursor: pointer;display: none;}
+.show-menu-btn:hover, .hide-menu-btn:hover, .list_menu a:hover{color:rgb(0, 102, 218);}
+.show-menu-btn{float: right;}
+.show-menu-btn i{line-height: 100px;}
+.list_menu a label{cursor: pointer;}
+
+#chk{visibility: hidden;position: absolute;z-index: -1000;}
+
+@keyframes move_bird{
+0%{
+   transform: translateX(-100vw);
+}
+100%{
+    
+    transform: translateX(50vw) translateY(-50vh);
+}
+
+}
+
+@keyframes move_bird2{
+    0%{
+        transform: translateX(-100vw)
+    }
+    100%{
+        transform: translateX(60vw) translateY(-30vh);
+    }
+    
+    }
+
+@media screen and ( max-width:991px){
+    .show-menu-btn, .hide-menu-btn{display: block;}
+    .list_menu{position: fixed;right: -100%; background-color:#000; padding: 80px 0px; width: 100%;top: 0px; height: 100vh;text-align: center;line-height: normal;transition:0.5s;}
+    .list_menu a{display: block; padding: 20px;}
+    .hide-menu-btn{position: absolute; right: 40px; top:40px;}
+    #chk:checked ~ .list_menu{right: 0px;}
+    .content img{margin-top: 100px;}
+    #bg{margin-top: 0px;}
+    
+}
